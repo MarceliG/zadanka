@@ -1,5 +1,6 @@
 def partitions(n):
-    n= list(n)
+    
+    
     print(n )
     # return n 
 
