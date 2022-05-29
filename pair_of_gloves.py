@@ -3,15 +3,13 @@ def number_of_pairs(gloves):
        return 0
     else:
         result = 0
-        for element in gloves:
-            if gloves.count(element) >2:
-                result += int(gloves.cout(element)%2)
+        set_gloves = set(gloves)
+        for element in set_gloves:
+            result += int(gloves.count(element)/2)
         return result
 
-gloves = ["gray","black","purple","purple","gray","black"]
-# gloves = []
-print(gloves.count('gray')%2)
-# print(number_of_pairs(gloves))
+# gloves = ["gray","black","purple","purple","gray","black", "gray"]
+gloves = ["red","green","blue","blue","red","green","red","red","red"]
 
 # test.describe("Basic tests")
 # test.assert_equals(number_of_pairs(["red","red"]),1)
@@ -19,3 +17,12 @@ print(gloves.count('gray')%2)
 # test.assert_equals(number_of_pairs(["gray","black","purple","purple","gray","black"]),3)
 # test.assert_equals(number_of_pairs([]),0)
 # test.assert_equals(number_of_pairs(["red","green","blue","blue","red","green","red","red","red"]),4)
+
+
+
+def num_gloves(gloves):
+    return sum(gloves.count(c)//2 for c in set(gloves))
+
+
+print(number_of_pairs(gloves))
+print(num_gloves(gloves))
