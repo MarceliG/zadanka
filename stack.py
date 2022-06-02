@@ -1,3 +1,6 @@
+from posixpath import split
+
+
 class Game:
     """Start stack."""
     def __init__(self):
@@ -15,6 +18,8 @@ class Game:
 
     """Adds together the top two elements on the stack."""
     def add(self):
+        if len(self.stack) >= 2:
+            result = self.stack.pop(-1)+self.stack.pop(-1)
         pass
     
     """Subtracts the top-most element by the second top-most element on the stack."""
@@ -39,5 +44,14 @@ div = start.div()
 end = start.end()
 
 
-class TestStack:
-    
+#remove '(' and  ')' and return list
+play_game = '(start)(push)(5)(sub)(5)'
+play_game = play_game.replace('(', "")
+play_game = list(filter(None, play_game.split(")")))
+print(play_game)
+
+liczby = [1,2,3,4]
+
+
+print(liczby)
+print(result)
